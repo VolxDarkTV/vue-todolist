@@ -39,6 +39,7 @@
 
 #input__results__container{
     margin-top: 30px;
+    text-align: center;
 }
 .task{
     display: flex;

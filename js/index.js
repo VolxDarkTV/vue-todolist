@@ -4,6 +4,8 @@ createApp({
     data(){
         return{
             tasksInput : 0,
+            logo: 'img/IKEA-logo.png',
+            newTask:'',
             // All Data
             tasks : 
             [
@@ -23,6 +25,12 @@ createApp({
 
         }
     },
+    methods:{
+        // metodi
+        addTask(){
+            this.tasks.push(this.newTask);
+        }
+    }
 
    
 

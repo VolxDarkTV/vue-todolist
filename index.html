@@ -16,15 +16,24 @@
         
         
         <section class="input__container">
+
             <!-- LOGO -->
             <div id="logo">
-                <img src="img/IKEA-logo.png" alt="">
+                <img :src="logo" alt="">
             </div>
+
             <!-- Input textBox & Button -->
             <div id="input">
-                <input id="input__text" type="text" placeholder="Add Task">
-                <button id="button">&plus; Add</button>
+                <input id="input__text" type="text" placeholder="Add Task" v-model="newTask">
+                <button id="button" @click="addTask">&plus; Add</button>
+
+                <!-- ERRORE -->
+                <!-- <div class="error">
+                    <small style="color: red;">Devi inserire una task di almeno 5 caratteri</small>
+                </div> -->
+
             </div>
+            
             <!-- Results Of inputBox & Button -->
             <div id="input__results__container">
                 <!-- Have Tasks! -->
@@ -35,8 +44,9 @@
                     </li>
                 </ul>
                 <!-- No Have Tascks -->
-                <h2>Non ho una minchia da fareeee!!</h2>
+                <!-- <h2>Non ho nulla da fareeee!!</h2> -->
             </div>
+
         </section>
     </div>
 
