@@ -3,6 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* PRELOADER */
+#preloader{
+    background-color: #000;
+    background-image: url(../img/loadingImage.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    margin-top: -50px;
+    z-index: 999;
+}
 /* LOGO */
 #logo{
     width: 100px;

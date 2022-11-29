@@ -1,4 +1,10 @@
-import loader from '../loader.Vue'
+var loader = document.getElementById('preloader');
+window.addEventListener('load', function loadState (){
+    loader.style.display = 'none';
+});
+
+
+
 const { createApp } = Vue
 
 createApp({
