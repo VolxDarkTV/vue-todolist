@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tasks</title>
+</head>
+<body>
+
+    <div id="app">
+        
+        <section class="input__container">
+
+            <!-- LOGO -->
+            <div id="logo">
+                <img :src="logo" alt="">
+            </div>
+
+            <!-- Input textBox & Button -->
+            <div class="task__container">
+
+                <div id="input">
+                    <!-- INPUT TEXT -->
+                    <input id="input__text" type="text" placeholder="Add Task" v-model="newTask" @KeyUp.enter="addTask">
+                    <!-- BUTTON -->
+                    <button id="button" @click="addTask">&plus; Add</button>
+                </div>
+
+                <!-- ERRORE -->
+                <div class="error" v-if="error">
+                    <small style="color: red;">Devi inserire una task di almeno 5 caratteri</small>
+                </div>
+
+            </div>
+            
+            <!-- Results Of inputBox & Button -->
+            <div id="input__results__container">
+                <!-- Have Tasks! -->
+                <ul v-if="tasks.length > 0">
+                    <li class="task" v-for="(task, index) in tasks">
+                        {{task.text}}
+                        <i class="fas fa-times cross" @click="deletTask(index)"></i>
+                    </li>
+                </ul>
+                <!-- No Have Tascks -->
+                <h2 v-else>Non ho nulla da Acquistare 😔</h2>
+            </div>
+            
+        </section>
+    </div>
+
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <script src="loader.vue"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
