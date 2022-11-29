@@ -19,7 +19,8 @@
     max-width: 900px;
     margin: 0 auto;
     margin-top: 50px;
-    background-color: aquamarine;
+    padding: 20px 0px;
+    background-color: #ffcc00;
 }
 .task__container{
     display: flex;
@@ -44,7 +45,10 @@
 
 #input__results__container{
     margin-top: 30px;
+    padding: 20px;
     text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
 }
 .task{
     display: flex;
@@ -52,7 +56,11 @@
     list-style: none;
     padding-bottom: 5px;
     margin-top: 5px;
+    padding: 10px;
     border-bottom: solid black 1px;
+}
+.task:hover{
+    background-color: #ececec;
 }
 .cross{
     padding-left: 20px;
@@ -60,4 +68,7 @@
 }
 .cross:hover{
     color: red;
+}
+.caricato{
+    display: none;
 }

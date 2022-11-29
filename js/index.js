@@ -11,15 +11,15 @@ createApp({
             tasks : 
             [
                 { 
-                    text: 'Fare i compiti', 
+                    text: 'Comprare letto', 
                     done: false 
                 }, 
                 { 
-                    text: 'Fare la spesaaaaaaaaaaaaaaaa jdhsbvjsdvdjvcbjdsbcjdj', 
+                    text: 'Comprare mobile 70 x 90 x 1.20 per il salone', 
                     done: true
                 }, 
                 {
-                    text: 'Fare il bucato', 
+                    text: 'Comprare il lampadario', 
                     done: false 
                 },
             ]
@@ -31,9 +31,9 @@ createApp({
         addTask(){
             // Prima di tutto mi creo l'object e inserisco al suo interno il tag text perché poi verrà utilizzato per cercare la srtinga di testo. Successivamente inserisco this.newTask che è collegato all'input.
             if (this.newTask.length < 5 || this.newTask === '') {
-                this.error=true;
+                this.error = true;
             }else{
-                this.error=false;
+                this.error = false;
                 const obj = {text: `${this.newTask}`};
                 this.tasks.push(obj);
                 // Pulisco l'input dopo l'invio, e se esce errore resta ciò che ho scritto.
@@ -43,9 +43,7 @@ createApp({
         deletTask(index){
             this.tasks.splice(index, 1);
         }
-    }
-
-   
+    },
 
 
 }).mount('#app')
