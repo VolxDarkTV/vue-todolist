@@ -20,6 +20,9 @@ createApp({
                 {
                     text: 'Fare il bucato', 
                     done: false 
+                },
+                {
+                    text: 'ciao'
                 }
             ]
 
@@ -28,7 +31,9 @@ createApp({
     methods:{
         // metodi
         addTask(){
-            this.tasks.push(this.newTask);
+            // Prima di tutto mi creo l'object e inserisco al suo interno il tag text perché poi verrà utilizzato per cercare la srtinga di testo. Successivamente inserisco this.newTask che è collegato all'input
+            const obj = {text: `${this.newTask}`};
+            this.tasks.push(obj);
         }
     }
 
