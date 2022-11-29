@@ -23,28 +23,31 @@
             </div>
 
             <!-- Input textBox & Button -->
-            <div id="input">
-                <input id="input__text" type="text" placeholder="Add Task" v-model="newTask">
-                <button id="button" @click="addTask">&plus; Add</button>
+            <div class="task__container">
+
+                <div id="input">
+                    <input id="input__text" type="text" placeholder="Add Task" v-model="newTask" @KeyUp.enter="addTask">
+                    <button id="button" @click="addTask">&plus; Add</button>
+                </div>
 
                 <!-- ERRORE -->
-                <!-- <div class="error">
+                <div class="error" v-if="error">
                     <small style="color: red;">Devi inserire una task di almeno 5 caratteri</small>
-                </div> -->
+                </div>
 
             </div>
             
             <!-- Results Of inputBox & Button -->
             <div id="input__results__container">
                 <!-- Have Tasks! -->
-                <ul>
-                    <li class="task" v-for="task in tasks">
+                <ul v-if="tasks.length > 0">
+                    <li class="task" v-for="(task, index) in tasks">
                         {{task.text}}
-                        <i class="fas fa-times cross"></i>
+                        <i class="fas fa-times cross" @click="deletTask(index)"></i>
                     </li>
                 </ul>
                 <!-- No Have Tascks -->
-                <h2>Non ho nulla da fareeee!!</h2>
+                <h2 v-else>Non ho nulla da fareeee!!</h2>
             </div>
             
         </section>

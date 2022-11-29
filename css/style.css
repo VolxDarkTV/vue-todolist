@@ -21,6 +21,11 @@
     margin-top: 50px;
     background-color: aquamarine;
 }
+.task__container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 #input{
    display: flex;
    align-items: center;
